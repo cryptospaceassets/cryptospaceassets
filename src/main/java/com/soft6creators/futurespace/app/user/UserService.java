@@ -125,6 +125,10 @@ public class UserService {
 			return true;
 		}
 	}
+	
+	public User updateUser(User user) {
+		return userRepository.save(user);
+	}
 
 	public User signIn(String email, String password) {
 		Optional<User> user = userRepository.findByEmailAndPassword(email, password);
