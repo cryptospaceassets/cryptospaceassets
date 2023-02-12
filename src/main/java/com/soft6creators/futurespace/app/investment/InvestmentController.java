@@ -1,6 +1,7 @@
 package com.soft6creators.futurespace.app.investment;
 
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,6 +34,11 @@ public class InvestmentController {
 	@RequestMapping("/investment/{investmentId}")
 	public Optional<Investment> getInvestment(@PathVariable int investmentId) {
 		return investmentService.getInvestMent(investmentId);
+	}
+	
+	@RequestMapping("/investments")
+	public List<Investment> getInvestments() {
+		return investmentService.getInvestments();	
 	}
 	
 	@RequestMapping("/account/{accountId}/investment")
